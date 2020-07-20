@@ -5,8 +5,10 @@ Expression 2 UI Library for Gmod (Garry's Mod)
 Save as "ui/" folder inside expression2.
   
 # Usage:
-EGP:createbutton(Position:vector2, Size:vector2, Text:string, Text Size:number)  
-EGP:createtextfield(Position:vector2, Size:vector2, Text:string, Text Size:number)  
+## Buttons  
+>EGP:createbutton(Position:vector2, Size:vector2, Text:string, Text Size:number)  
+## Text Fields  
+>EGP:createtextfield(Position:vector2, Size:vector2, Text:string, Text Size:number)  
 
 Check out the examples too! (togglebtn, singlebtn and keypad)  
   

@@ -1,10 +1,10 @@
 # uilib
 Expression 2 UI Library for Gmod (Garry's Mod)
 
-#Readme:
+# Readme:
 Save as "ui/" folder inside expression2.
 
-#Usage:
+# Usage:
 EGP:createbutton(Position:vector2, Size:vector2, Text:string, Text Size:number)
 EGP:createtextfield(Position:vector2, Size:vector2, Text:string, Text Size:number)
 

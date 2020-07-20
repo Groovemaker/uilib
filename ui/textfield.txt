@@ -1,0 +1,40 @@
+@name GrooveOS: Single Button Panel
+@inputs EGP:wirelink
+@outputs Pressed1
+@persist Funny:array Txt1
+@trigger
+
+interval(1)
+
+if(first() || duped() || changed(EGP)){
+    #include "ui/uilib"
+    
+    Funny:pushString("Moellen...")
+    Funny:pushString("LOOOOOL")
+    Funny:pushString("Wanna press it moar?")
+    Funny:pushString("Do not press this button.")
+    Funny:pushString("Haha, that tickles!")
+    
+    EGP:egpClear()
+    Txt1 = EGP:createtextfield(vec2(250, 180),vec2(400,88),"This is a text field!",33)
+    Button1 = EGP:createbutton(vec2(250, 380),vec2(100,88),"Roll",33)
+    EGP:egpText(99,"GrooveOS Panel v0.1",vec2(10,10))
+    EGP:egpFont(99,"DermaDefault",20)
+ 
+}
+User = EGP["User",entity]
+Cursor = EGP:egpCursor(User)
+Use = User:keyUse()
+
+if(changed(Use) & Use){
+    if(EGP:button(Cursor,Button1)){
+        EGP:egpColor(Button1,BtnPressColor)
+        timer("btndepress1",200)
+        EGP:egpSetText(Txt1,Funny[randint(1,Funny:count()),string])
+        
+    }
+}
+if(clk("btndepress1")){
+    EGP:egpColor(Button1,BtnForeColor)
+}
+

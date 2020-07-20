@@ -1,0 +1,15 @@
+@name Uilib Theme "Midnight"
+@inputs 
+@outputs 
+@persist PressSnd:string
+@trigger 
+
+BtnForeColor = vec(11,85,255) 
+BtnForeColor2 = vec(111,111,111)
+BtnPressColor = BtnForeColor / 2
+BtnTextColor = vec(0,0,0)
+BtnWrongColor = vec(255,0,0)
+BtnRightColor = vec(0,255,0)
+
+PressSnd = "buttons/button18.wav"
+

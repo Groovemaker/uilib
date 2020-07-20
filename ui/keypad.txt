@@ -1,0 +1,167 @@
+@name GrooveOS: Keypad Panel
+@inputs EGP:wirelink
+@outputs Value
+@trigger
+@persist FinSeq:string
+interval(1)
+if(first() || duped() || changed(EGP)){
+    #include "ui/uilib"
+    Pass = "1337"
+    PassA = Pass:explode("")
+    EGP:egpClear()
+    Button1 = EGP:createbutton(vec2(100, 130),vec2(55),"1",44)
+    Button2 = EGP:createbutton(vec2(260, 130),vec2(55),"2",44)
+    Button3 = EGP:createbutton(vec2(420, 130),vec2(55),"3",44)
+    Button4 = EGP:createbutton(vec2(100, 275),vec2(55),"4",44)
+    Button5 = EGP:createbutton(vec2(260, 275),vec2(55),"5",44)
+    Button6 = EGP:createbutton(vec2(420, 275),vec2(55),"6",44)
+    Button7 = EGP:createbutton(vec2(100, 420),vec2(55),"7",44)
+    Button8 = EGP:createbutton(vec2(260, 420),vec2(55),"8",44)
+    Button9 = EGP:createbutton(vec2(420, 420),vec2(55),"9",44)
+    EGP:egpText(99,"GrooveOS Keypad",vec2(10,10))
+    EGP:egpFont(99,"DermaDefault",20)
+ 
+}
+User = EGP["User",entity]
+Cursor = EGP:egpCursor(User)
+Use = User:keyUse()
+
+if(changed(Use) & Use){
+    if(EGP:button(Cursor,Button1)){
+        EGP:egpColor(Button1,BtnPressColor)
+        Seq:pushNumber(1)
+        print(Seq)
+        timer("btndepress1",200)
+    }
+    if(EGP:button(Cursor,Button2)){
+        EGP:egpColor(Button2,BtnPressColor)
+        Seq:pushNumber(2)
+        print(Seq)
+        timer("btndepress2",200)
+    }
+    if(EGP:button(Cursor,Button3)){
+        EGP:egpColor(Button3,BtnPressColor)
+        Seq:pushNumber(3)
+        print(Seq)
+        timer("btndepress3",200)
+    }
+    if(EGP:button(Cursor,Button4)){
+        EGP:egpColor(Button4,BtnPressColor)
+        Seq:pushNumber(4)
+        print(Seq)
+        timer("btndepress4",200)
+    }
+    if(EGP:button(Cursor,Button5)){
+        EGP:egpColor(Button5,BtnPressColor)
+        Seq:pushNumber(5)
+        print(Seq)
+        timer("btndepress5",200)
+    }
+    if(EGP:button(Cursor,Button6)){
+        EGP:egpColor(Button6,BtnPressColor)
+        Seq:pushNumber(6)
+        print(Seq)
+        timer("btndepress6",200)
+    }
+    if(EGP:button(Cursor,Button7)){
+        EGP:egpColor(Button7,BtnPressColor)
+        Seq:pushNumber(7)
+        print(Seq)
+        timer("btndepress7",200)
+    }
+    if(EGP:button(Cursor,Button8)){
+        EGP:egpColor(Button8,BtnPressColor)
+        Seq:pushNumber(8)
+        print(Seq)
+        timer("btndepress8",200)
+    }
+    if(EGP:button(Cursor,Button9)){
+        EGP:egpColor(Button9,BtnPressColor)
+        Seq:pushNumber(9)
+        print(Seq)
+        timer("btndepress9",200)
+    }
+    elseif(EGP:button(Cursor,2)){
+    }    
+}
+if(clk("btndepress1")){
+    EGP:egpColor(Button1,BtnForeColor)
+    Pressed1 = 0
+}
+if(clk("btndepress2")){
+    EGP:egpColor(Button2,BtnForeColor)
+    Pressed1 = 0
+}
+if(clk("btndepress3")){
+    EGP:egpColor(Button3,BtnForeColor)
+    Pressed1 = 0
+}
+if(clk("btndepress4")){
+    EGP:egpColor(Button4,BtnForeColor)
+    Pressed1 = 0
+}
+if(clk("btndepress5")){
+    EGP:egpColor(Button5,BtnForeColor)
+    Pressed1 = 0
+}
+if(clk("btndepress6")){
+    EGP:egpColor(Button6,BtnForeColor)
+    Pressed1 = 0
+}
+if(clk("btndepress7")){
+    EGP:egpColor(Button7,BtnForeColor)
+    Pressed1 = 0
+}
+if(clk("btndepress8")){
+    EGP:egpColor(Button8,BtnForeColor)
+    Pressed1 = 0
+}
+if(clk("btndepress9")){
+    EGP:egpColor(Button9,BtnForeColor)
+    Pressed1 = 0
+}
+if(Seq:count() == 4){
+    FinSeq = Seq:concat("")
+    print(FinSeq)
+    if(FinSeq == Pass){
+        soundPlay(3,0,"buttons/button3.wav")
+        EGP:egpColor(Button1,BtnRightColor)
+        EGP:egpColor(Button2,BtnRightColor)
+        EGP:egpColor(Button3,BtnRightColor)
+        EGP:egpColor(Button4,BtnRightColor)
+        EGP:egpColor(Button5,BtnRightColor)
+        EGP:egpColor(Button6,BtnRightColor)
+        EGP:egpColor(Button7,BtnRightColor)
+        EGP:egpColor(Button8,BtnRightColor)
+        EGP:egpColor(Button9,BtnRightColor)
+        Value = 1  
+    }else{
+        soundPlay(3,0,"buttons/button8.wav")
+        EGP:egpColor(Button1,BtnWrongColor)
+        EGP:egpColor(Button2,BtnWrongColor)
+        EGP:egpColor(Button3,BtnWrongColor)
+        EGP:egpColor(Button4,BtnWrongColor)
+        EGP:egpColor(Button5,BtnWrongColor)
+        EGP:egpColor(Button6,BtnWrongColor)
+        EGP:egpColor(Button7,BtnWrongColor)
+        EGP:egpColor(Button8,BtnWrongColor)
+        EGP:egpColor(Button9,BtnWrongColor)
+        Value = 0
+    }
+    Seq:clear()
+    FinSeq = ""
+    timer("reset",200)
+}
+if(clk("reset")){
+    EGP:egpColor(Button1,BtnForeColor)
+    EGP:egpColor(Button2,BtnForeColor)
+    EGP:egpColor(Button3,BtnForeColor)
+    EGP:egpColor(Button4,BtnForeColor)
+    EGP:egpColor(Button5,BtnForeColor)
+    EGP:egpColor(Button6,BtnForeColor)
+    EGP:egpColor(Button7,BtnForeColor)
+    EGP:egpColor(Button8,BtnForeColor)
+    EGP:egpColor(Button9,BtnForeColor)
+    Value = 0
+}
+

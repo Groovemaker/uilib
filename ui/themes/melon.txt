@@ -1,0 +1,15 @@
+@name Uilib Theme "Melon"
+@inputs 
+@outputs 
+@persist PressSnd:string
+@trigger 
+
+BtnForeColor = vec(55,200,55) 
+BtnForeColor2 = vec(255,11,11)
+BtnPressColor = BtnForeColor / 2
+BtnTextColor = vec(0,0,0)
+BtnWrongColor = vec(255,0,0)
+BtnRightColor = vec(0,255,0)
+
+PressSnd = "buttons/button18.wav"
+

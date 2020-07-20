@@ -1,0 +1,15 @@
+@name Uilib Theme "Ikelos"
+@inputs 
+@outputs 
+@persist PressSnd:string
+@trigger 
+
+BtnForeColor = vec(255,110,0)
+BtnForeColor2 = vec(255,60,0)  
+BtnPressColor = vec(55,22,22)
+BtnTextColor = vec(0,0,0)
+BtnWrongColor = vec(255,0,0)
+BtnRightColor = vec(0,255,0)
+
+PressSnd = "buttons/button18.wav"
+

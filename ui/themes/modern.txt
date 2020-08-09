@@ -1,0 +1,19 @@
+@name Uilib Theme "Modern"
+@inputs 
+@outputs 
+@persist PressSnd:string
+@trigger 
+
+BackgroundEnable = 1
+ButtonStyle = "Rounded"
+Background = "console/background05"
+BtnForeColor = vec(55,55,55) 
+BtnForeColor2 = vec(233,233,233)
+BtnAlpha = 151
+BtnPressColor = BtnForeColor * 2
+BtnTextColor = vec(233,233,233)
+BtnWrongColor = vec(255,0,0)
+BtnRightColor = vec(0,255,0)
+
+PressSnd = "buttons/button18.wav"
+

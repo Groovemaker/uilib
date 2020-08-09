@@ -5,6 +5,8 @@ Expression 2 UI Library for Gmod (Garry's Mod)
 Save as "ui/" folder inside expression2.
   
 # Usage:
+## Initialization
+>In the newest version youll have to call EGP:initUI() before everything, this ensures the latest customizations are loaded.
 ## Buttons  
 >EGP:createbutton(Position:vector2, Size:vector2, Text:string, Text Size:number)  
 ## Text Fields  

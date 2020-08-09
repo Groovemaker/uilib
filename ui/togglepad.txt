@@ -135,7 +135,11 @@ if(Seq:count() == 4){
         EGP:egpColor(Button7,BtnRightColor)
         EGP:egpColor(Button8,BtnRightColor)
         EGP:egpColor(Button9,BtnRightColor)
-        Value = 1  
+        if(Value == 0){
+            Value = 1  
+        }else{
+            Value = 0
+        }
     }else{
         soundPlay(3,0,"buttons/button8.wav")
         EGP:egpColor(Button1,BtnWrongColor)
@@ -163,6 +167,5 @@ if(clk("reset")){
     EGP:egpColor(Button7,BtnForeColor)
     EGP:egpColor(Button8,BtnForeColor)
     EGP:egpColor(Button9,BtnForeColor)
-    Value = 0
 }
 

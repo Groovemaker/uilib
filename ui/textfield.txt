@@ -8,14 +8,15 @@ interval(1)
 
 if(first() || duped() || changed(EGP)){
     #include "ui/uilib"
-    
+
     Funny:pushString("Moellen...")
     Funny:pushString("LOOOOOL")
     Funny:pushString("Wanna press it moar?")
     Funny:pushString("Do not press this button.")
-    Funny:pushString("Haha, that tickles!")
+    Funny:pushString("Enter, m'lad!")
     
     EGP:egpClear()
+    EGP:initUI()
     Txt1 = EGP:createtextfield(vec2(250, 180),vec2(400,88),"This is a text field!",33)
     Button1 = EGP:createbutton(vec2(250, 380),vec2(100,88),"Roll",33)
     EGP:egpText(99,"GrooveOS Panel v0.1",vec2(10,10))

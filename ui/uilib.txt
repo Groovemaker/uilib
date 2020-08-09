@@ -5,13 +5,13 @@
 
 #Place your Theme File here!
 
-#include "ui/themes/modern"
+#include "ui/themes/nightingale"
 
 #### Other stuff
 
 function number wirelink:initUI(){
     if(BackgroundEnable == 1){
-        EGP:egpBox(999,vec2(0,0),vec2(1024,1024))
+        EGP:egpBox(999,vec2(256,256),vec2(512,512))
         EGP:egpMaterial(999,Background)
         EGP:egpOrder(999,1) 
     }

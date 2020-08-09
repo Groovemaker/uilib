@@ -4,6 +4,8 @@
 @persist PressSnd:string
 @trigger 
 
+ThemeStyle = "Modern"
+
 BackgroundEnable = 1
 ButtonStyle = "Rounded"
 Background = "console/background05"

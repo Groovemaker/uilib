@@ -1,0 +1,21 @@
+@name Uilib Theme "Nightingale"
+@inputs 
+@outputs 
+@persist PressSnd:string
+@trigger 
+
+ThemeStyle = "Modern"
+
+BackgroundEnable = 1
+ButtonStyle = "Rounded"
+Background = "console/background03"
+BtnForeColor = vec(33,33,33) 
+BtnForeColor2 = vec(233,233,233)
+BtnAlpha = 151
+BtnPressColor = BtnForeColor * 2
+BtnTextColor = vec(233,233,233)
+BtnWrongColor = vec(255,0,0)
+BtnRightColor = vec(0,255,0)
+
+PressSnd = "buttons/button18.wav"
+

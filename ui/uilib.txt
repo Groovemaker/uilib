@@ -65,7 +65,6 @@ function number wirelink:createtextfield(Pos:vector2,Size:vector2,Txt:string,Txt
 }
 function number wirelink:createprogressbar(Pos:vector2,Size:vector2){
     ID+=2
-    if(changed(Pos)){
         if(ThemeStyle == "Modern"){
             EGP:egpBox(ID,Pos,Size)
             EGP:egpColor(ID,BtnForeColor)
@@ -77,11 +76,10 @@ function number wirelink:createprogressbar(Pos:vector2,Size:vector2){
         #print((Pos:x()*Size:x())*1)
         EGP:egpColor(ID+1,BtnForeColor2)
         EGP:egpAlign(ID+1,2)
-    }
-    if(ThemeStyle == "Modern"){
-        EGP:egpAlpha(ID,BtnAlpha)
-    }
-    return ID+1
+        if(ThemeStyle == "Modern"){
+            EGP:egpAlpha(ID,BtnAlpha)
+        }
+        return ID+1
 }
 function wirelink:updateprogress(ID,Progress){
     if(changed(ID)){

@@ -1,0 +1,23 @@
+@name GrooveOS: Single Button Panel
+@inputs EGP:wirelink
+@outputs Pressed1
+@persist Funny:array Txt1 Prog Bar
+@trigger
+
+interval(111)
+
+if(first() || duped() || changed(EGP)){
+    #include "ui/uilib"
+
+    
+    EGP:egpClear()
+    EGP:initUI()
+    EGP:egpText(99,"GrooveOS Panel v0.1",vec2(10,10))
+    EGP:egpFont(99,"DermaDefault",20)
+    Prog = 0
+    Bar = EGP:createprogressbar(vec2(250, 180),vec2(400,88))
+}
+
+Prog+=1
+#print(Prog)
+EGP:updateprogress(Bar,Prog)

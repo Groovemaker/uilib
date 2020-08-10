@@ -1,15 +1,16 @@
 @name GrooveOS: Progress Bar Example
 @inputs EGP:wirelink
 @outputs Pressed1
-@persist Funny:array Txt1 Prog Bar Go Interval
+@persist Funny:array Txt1 Prog Bar Go Interval Multi Iter I
 @trigger
 
 interval(11)
 
 if(first() || duped() || changed(EGP)){
     #include "ui/uilib"
-    Interval = 2000
-
+    Interval = 111
+    Multi = 3
+    Iter = 111
     
     EGP:egpClear()
     EGP:initUI()
@@ -18,7 +19,8 @@ if(first() || duped() || changed(EGP)){
     EGP:egpFont(99,"DermaDefault",20)
     Prog = 0
     Button1 = EGP:createbutton(vec2(250, 300),vec2(200,88),"Go",33)
-
+    Txt1 = EGP:createtextfield(vec2(250, 444),vec2(155,88),"Hit Go",33)
+    I = 0
 
 }
 
@@ -40,25 +42,17 @@ if(clk("btndepress1")){
 }
 
 if(clk("Step1")){
-    print("Schritt 1 Erfolgt")
-    Prog = 25
-    EGP:updateprogress(Bar,Prog)
-    timer("Step2",Interval)
-}
-if(clk("Step2")){
-    print("Schritt 2 Erfolgt")
-    Prog = 50
-    EGP:updateprogress(Bar,Prog)
-    timer("Step3",Interval)
-}
-if(clk("Step3")){
-    print("Schritt 3 Erfolgt")
-    Prog = 75
-    EGP:updateprogress(Bar,Prog)
-    timer("Step4",Interval)
-}
-if(clk("Step4")){
-    print("Schritt 4 Erfolgt")
-    Prog = 100
-    EGP:updateprogress(Bar,Prog)
+    if(I<Iter){
+        I++
+        holoCreate(I)
+        holoScale(I,vec(0.3))
+        holoPos(I,entity():toWorld(vec(0,0,3*I)))
+        holoColor(I,vec(0,1,0)*I*2)
+        Prog+= 100/Iter
+        EGP:egpSetText(Txt1,I+"/"+Iter)
+        EGP:updateprogress(Bar,Prog)
+        timer("Step1",Interval)
+    }else{
+        EGP:egpSetText(Txt1,"Finished!")
+    }
 }

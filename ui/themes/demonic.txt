@@ -17,5 +17,5 @@ BtnTextColor = vec(233,233,233)
 BtnWrongColor = vec(255,0,0)
 BtnRightColor = vec(0,255,0)
 
-PressSnd = "ui/cyoa_objective_panel_expand.wav"
+PressSnd = "buttons/button16.wav"
 

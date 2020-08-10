@@ -5,7 +5,7 @@
 
 #Place your Theme File here!
 
-#include "ui/themes/nightingale"
+#include "ui/themes/demonic"
 
 #### Other stuff
 

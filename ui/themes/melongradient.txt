@@ -1,0 +1,23 @@
+@name Uilib Theme "Modern Melon"
+@inputs 
+@outputs 
+@persist PressSnd:string
+@trigger 
+
+ThemeStyle = "Modern"
+
+TxtFont = "Coolvetica"
+BackgroundEnable = 1
+ButtonStyle = "Gradient"
+Background = "gui/noicon.png"
+BtnForeColor = vec(255,11,77)
+Gradient = vec(11,222,11)
+BtnForeColor2 = vec(11,11,11)
+BtnAlpha = 155
+BtnPressColor = BtnForeColor * 2
+BtnTextColor = vec(233,233,233)
+BtnWrongColor = vec(255,0,0)
+BtnRightColor = vec(0,255,0)
+
+PressSnd = "buttons/button16.wav"
+

@@ -1,12 +1,14 @@
 @name 
 @inputs 
-@persist User:entity BtnAlpha ThemeStyle:string OldSiz:vector2 BarSiz:vector2 OldPos:vector2 BackgroundEnable ButtonStyle:string Background:string Value Seq:array BtnWrongColor:vector BtnRightColor:vector PassA:array Pass:string Cursor:vector2 ID Button1 Button2 Button3 Button4 Button5 Button6 Button7 Button8 Button9 Pressed1 Use B BtnPressColor:vector BtnForeColor2:vector BtnForeColor:vector BtnTextColor:vector But EGP:wirelink
+@persist User:entity BtnAlpha TxtFont:string ThemeStyle:string Gradient:vector OldSiz:vector2 BarSiz:vector2 OldPos:vector2 BackgroundEnable ButtonStyle:string Background:string Value Seq:array BtnWrongColor:vector BtnRightColor:vector PassA:array Pass:string Cursor:vector2 ID Button1 Button2 Button3 Button4 Button5 Button6 Button7 Button8 Button9 Pressed1 Use B BtnPressColor:vector BtnForeColor2:vector BtnForeColor:vector BtnTextColor:vector But EGP:wirelink
 @trigger 
 
 #Place your Theme File here!
 
-#include "ui/themes/demonic"
-
+#include "ui/themes/nightingale"
+if(TxtFont == ""){
+    TxtFont = "DermaDefault"
+}
 #### Other stuff
 
 function number wirelink:initUI(){
@@ -20,10 +22,21 @@ function number wirelink:initUI(){
 function number wirelink:createbutton(Pos:vector2,Size:vector2,Txt:string,TxtSiz){
 
     ID+=3
-    if(ButtonStyle != "Rounded"){
+    if(ButtonStyle != "Rounded" && ButtonStyle != "Gradient"){
         EGP:egpBox(ID,Pos,Size)  
         EGP:egpBoxOutline(ID+2,Pos,Size * 1.5)
-    }else{
+        EGP:egpColor(ID+2,BtnForeColor2) 
+    }
+    if(ButtonStyle == "Gradient"){
+        EGP:egpRoundedBox(ID,Pos,Size)
+        EGP:egpRadius(ID,30)
+
+        EGP:egpRoundedBox(ID+2,Pos,Size)
+        EGP:egpRadius(ID+2,30)
+        EGP:egpMaterial(ID+2,"gui/gradient_down")
+        EGP:egpColor(ID+2,Gradient)
+    }
+    if(ButtonStyle == "Rounded"){
         EGP:egpRoundedBox(ID,Pos,Size)
         EGP:egpRadius(ID,30)
     }
@@ -32,18 +45,29 @@ function number wirelink:createbutton(Pos:vector2,Size:vector2,Txt:string,TxtSiz
     }
     EGP:egpText(ID+1,Txt,vec2(Pos[1],Pos[2]))
     EGP:egpAlign(ID+1,1,1)
-    EGP:egpFont(ID+1,"DermaDefault",TxtSiz)
+    EGP:egpFont(ID+1,TxtFont,TxtSiz)
     EGP:egpColor(ID,BtnForeColor)
     EGP:egpColor(ID+1,BtnTextColor)
-    EGP:egpColor(ID+2,BtnForeColor2) 
+    #EGP:egpColor(ID+2,BtnForeColor2) 
     return ID
 }
 function number wirelink:createbuttonEx(ID, Pos:vector2,Size:vector2,Txt:string,TxtSiz){
 
-    if(ButtonStyle != "Rounded"){
+    if(ButtonStyle != "Rounded" && ButtonStyle != "Gradient"){
         EGP:egpBox(ID,Pos,Size)  
         EGP:egpBoxOutline(ID+2,Pos,Size * 1.5)
-    }else{
+        EGP:egpColor(ID+2,BtnForeColor2) 
+    }
+    if(ButtonStyle == "Gradient"){
+        EGP:egpRoundedBox(ID,Pos,Size)
+        EGP:egpRadius(ID,30)
+
+        EGP:egpRoundedBox(ID+2,Pos,Size)
+        EGP:egpRadius(ID+2,30)
+        EGP:egpMaterial(ID+2,"gui/gradient_down")
+        EGP:egpColor(ID+2,Gradient)
+    }
+    if(ButtonStyle == "Rounded"){
         EGP:egpRoundedBox(ID,Pos,Size)
         EGP:egpRadius(ID,30)
     }
@@ -52,10 +76,10 @@ function number wirelink:createbuttonEx(ID, Pos:vector2,Size:vector2,Txt:string,
     }
     EGP:egpText(ID+1,Txt,vec2(Pos[1],Pos[2]))
     EGP:egpAlign(ID+1,1,1)
-    EGP:egpFont(ID+1,"DermaDefault",TxtSiz)
+    EGP:egpFont(ID+1,TxtFont,TxtSiz)
     EGP:egpColor(ID,BtnForeColor)
     EGP:egpColor(ID+1,BtnTextColor)
-    EGP:egpColor(ID+2,BtnForeColor2) 
+    #EGP:egpColor(ID+2,BtnForeColor2) 
     return ID
 }
 function number wirelink:button(Cursor:vector2,ID:number){
@@ -77,7 +101,7 @@ function number wirelink:createtextfield(Pos:vector2,Size:vector2,Txt:string,Txt
     }
     EGP:egpText(ID+1,Txt,vec2(Pos[1],Pos[2]))
     EGP:egpAlign(ID+1,1,1)
-    EGP:egpFont(ID+1,"DermaDefault",TxtSiz)
+    EGP:egpFont(ID+1,TxtFont,TxtSiz)
     if(ThemeStyle == "Modern"){
         EGP:egpAlpha(ID,BtnAlpha)
     }

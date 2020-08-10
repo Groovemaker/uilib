@@ -90,7 +90,13 @@ function wirelink:updateprogress(ID,Progress){
         OldPos = EGP:egpPos(ID)
 
     }
-    if(Progress < 100){
+    if(Progress <= 100){
+        Multiplied = (Progress * BarSiz:x())*0.0078
+        EGP:egpBox(ID,OldPos+vec2(Multiplied/2.1,0),OldSiz+vec2(Multiplied,0))
+        EGP:egpColor(ID,BtnForeColor2)
+        EGP:egpAlign(ID,2)
+    }else{
+        Progress = 100
         Multiplied = (Progress * BarSiz:x())*0.0078
         EGP:egpBox(ID,OldPos+vec2(Multiplied/2.1,0),OldSiz+vec2(Multiplied,0))
         EGP:egpColor(ID,BtnForeColor2)

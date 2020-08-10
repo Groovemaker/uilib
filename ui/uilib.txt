@@ -5,7 +5,7 @@
 
 #Place your Theme File here!
 
-#include "ui/themes/nightingale"
+#include "ui/themes/melongradient"
 if(TxtFont == ""){
     TxtFont = "DermaDefault"
 }
@@ -20,8 +20,7 @@ function number wirelink:initUI(){
     return 1
 }
 function number wirelink:createbutton(Pos:vector2,Size:vector2,Txt:string,TxtSiz){
-
-    ID+=3
+    ID+=2
     if(ButtonStyle != "Rounded" && ButtonStyle != "Gradient"){
         EGP:egpBox(ID,Pos,Size)  
         EGP:egpBoxOutline(ID+2,Pos,Size * 1.5)
@@ -31,10 +30,10 @@ function number wirelink:createbutton(Pos:vector2,Size:vector2,Txt:string,TxtSiz
         EGP:egpRoundedBox(ID,Pos,Size)
         EGP:egpRadius(ID,30)
 
-        EGP:egpRoundedBox(ID+2,Pos,Size)
-        EGP:egpRadius(ID+2,30)
-        EGP:egpMaterial(ID+2,"gui/gradient_down")
-        EGP:egpColor(ID+2,Gradient)
+        EGP:egpRoundedBox(ID+122,Pos,Size)
+        EGP:egpRadius(ID+122,30)
+        EGP:egpMaterial(ID+122,"gui/gradient_down")
+        EGP:egpColor(ID+122,Gradient)
     }
     if(ButtonStyle == "Rounded"){
         EGP:egpRoundedBox(ID,Pos,Size)

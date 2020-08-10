@@ -1,4 +1,4 @@
-@name Uilib Theme "Modern Melon"
+@name Uilib Theme "Blurple Gmod"
 @inputs 
 @outputs 
 @persist PressSnd:string
@@ -6,16 +6,16 @@
 
 ThemeStyle = "Modern"
 
-TxtFont = "Coolvetica"
+TxtFont = "DermaDefault"
 BackgroundEnable = 1
 ButtonStyle = "Gradient"
 Background = "gui/noicon.png"
-BtnForeColor = vec(255,11,77)
-Gradient = vec(11,222,11)
-BtnForeColor2 = vec(11,222,11)
+BtnForeColor = vec(111,11,255)
+Gradient = vec(111,111,255)
+BtnForeColor2 = vec(255)
 BtnAlpha = 155
 BtnPressColor = BtnForeColor * 2
-BtnTextColor = vec(233,233,233)
+BtnTextColor = vec(255)
 BtnWrongColor = vec(255,0,0)
 BtnRightColor = vec(0,255,0)
 

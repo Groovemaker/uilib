@@ -42,6 +42,8 @@ if(changed(Use) & Use){
         Iter = 111
         Pitch = 100
         Prog = 0
+        EGP:entity():soundPlay(33,0,"hl1/ambience/labdrone2.wav")
+        soundPitch(33,0)
         timer("Step1",Interval)
         timer("btndepress1",200)
     }

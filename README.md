@@ -11,9 +11,9 @@ Save as "ui/" folder inside expression2.
 >EGP:createbutton(Position:vector2, Size:vector2, Text:string, Text Size:number)  
 ## Text Fields  
 >EGP:createtextfield(Position:vector2, Size:vector2, Text:string, Text Size:number)  
-## Progress Bars  
->EGP:createprogressbar(Position:vector2,Size:vector2)
->EGP:updateprogress(Bar,Progress)
+## Progress Bars
+>EGP:createprogressbar(Position:vector2,Size:vector2)  
+>EGP:updateprogress(Bar,Progress)  
 
 ## Useful stuff
 Check out the examples too! (togglebtn, singlebtn and keypad)  

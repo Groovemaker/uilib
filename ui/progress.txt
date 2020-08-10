@@ -1,10 +1,10 @@
-@name GrooveOS: Single Button Panel
+@name GrooveOS: Progress Bar Example
 @inputs EGP:wirelink
 @outputs Pressed1
 @persist Funny:array Txt1 Prog Bar
 @trigger
 
-interval(111)
+interval(11)
 
 if(first() || duped() || changed(EGP)){
     #include "ui/uilib"
@@ -15,7 +15,7 @@ if(first() || duped() || changed(EGP)){
     EGP:egpText(99,"GrooveOS Panel v0.1",vec2(10,10))
     EGP:egpFont(99,"DermaDefault",20)
     Prog = 0
-    Bar = EGP:createprogressbar(vec2(250, 180),vec2(400,88))
+    Bar = EGP:createprogressbar(vec2(250, 180),vec2(333,88))
 }
 
 Prog+=1

@@ -1,13 +1,16 @@
 @name GrooveOS: Progress Bar Example
 @inputs EGP:wirelink
 @outputs Pressed1
-@persist Funny:array Txt1 Prog Bar Go Interval Multi Iter I Finished Pitch
+@persist Funny:array Txt1 Prog Bar Go Interval Multi Iter I Finished Pitch Models:array
 @trigger
 
-interval(11)
+interval(111)
 
 if(first() || duped() || changed(EGP)){
     #include "ui/uilib"
+    Models:pushString("cube")
+    Models:pushString("pyramid")
+    Models:pushString("hq_sphere")
     Finished = 0
     Interval = 111
     Multi = 3
@@ -58,6 +61,7 @@ if(clk("Step1")){
 
         I++
         holoCreate(I)
+        holoModel(I,Models[randint(1,Models:count()),string])
         holoScale(I,vec(0.3))
         holoPos(I,entity():toWorld(vec(0,0,3*I)))
         holoColor(I,vec(0,1,0)*I*2)

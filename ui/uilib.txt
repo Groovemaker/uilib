@@ -1,6 +1,6 @@
 @name 
 @inputs 
-@persist User:entity BtnAlpha ThemeStyle:string BackgroundEnable ButtonStyle:string Background:string Value Seq:array BtnWrongColor:vector BtnRightColor:vector PassA:array Pass:string Cursor:vector2 ID Button1 Button2 Button3 Button4 Button5 Button6 Button7 Button8 Button9 Pressed1 Use B BtnPressColor:vector BtnForeColor2:vector BtnForeColor:vector BtnTextColor:vector But EGP:wirelink
+@persist User:entity BtnAlpha ThemeStyle:string OldSiz:vector2 BarSiz:vector2 OldPos:vector2 BackgroundEnable ButtonStyle:string Background:string Value Seq:array BtnWrongColor:vector BtnRightColor:vector PassA:array Pass:string Cursor:vector2 ID Button1 Button2 Button3 Button4 Button5 Button6 Button7 Button8 Button9 Pressed1 Use B BtnPressColor:vector BtnForeColor2:vector BtnForeColor:vector BtnTextColor:vector But EGP:wirelink
 @trigger 
 
 #Place your Theme File here!
@@ -63,4 +63,37 @@ function number wirelink:createtextfield(Pos:vector2,Size:vector2,Txt:string,Txt
     }
     return ID+1
 }
+function number wirelink:createprogressbar(Pos:vector2,Size:vector2){
+    ID+=2
+    if(changed(Pos)){
+        if(ThemeStyle == "Modern"){
+            EGP:egpBox(ID,Pos,Size)
+            EGP:egpColor(ID,BtnForeColor)
+        }else{  
+            EGP:egpBoxOutline(ID,Pos,Size)
+            EGP:egpColor(ID,BtnForeColor2)
+        }
+        EGP:egpBox(ID+1,Pos-vec2((Pos:x()*Size:x())*0.0015,0),vec2(1,Size:y() * 0.5)+vec2(0,0))
+        #print((Pos:x()*Size:x())*1)
+        EGP:egpColor(ID+1,BtnForeColor2)
+        EGP:egpAlign(ID+1,2)
+    }
+    if(ThemeStyle == "Modern"){
+        EGP:egpAlpha(ID,BtnAlpha)
+    }
+    return ID+1
+}
+function wirelink:updateprogress(ID,Progress){
+    if(changed(ID)){
+        BarSiz = EGP:egpSize(ID-1)
+        OldSiz = EGP:egpSize(ID)
+        OldPos = EGP:egpPos(ID)
 
+    }
+    if(Progress < 100){
+        Multiplied = (Progress * BarSiz:x())*0.0078
+        EGP:egpBox(ID,OldPos+vec2(Multiplied/2.1,0),OldSiz+vec2(Multiplied,0))
+        EGP:egpColor(ID,BtnForeColor2)
+        EGP:egpAlign(ID,2)
+    }
+}

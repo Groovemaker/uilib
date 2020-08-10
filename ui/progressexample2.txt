@@ -34,6 +34,13 @@ Use = User:keyUse()
 if(changed(Use) & Use){
     if(EGP:button(Cursor,Button1)){
         EGP:egpColor(Button1,BtnPressColor)
+        holoDeleteAll()
+        I = 0
+        Finished = 0
+        Interval = 111
+        Multi = 3
+        Iter = 111
+        Pitch = 100
         Prog = 0
         timer("Step1",Interval)
         timer("btndepress1",200)

@@ -6,18 +6,18 @@ Save as "ui/" folder inside expression2.
   
 # Usage:
 ## Initialization
->In the newest version youll have to call EGP:initUI() before everything, this ensures the latest customizations are loaded.
+In the newest version youll have to call EGP:initUI() before everything, this ensures the latest customizations are loaded.  
 ## Buttons  
->EGP:createbutton(Position:vector2, Size:vector2, Text:string, Text Size:number)  
+EGP:createbutton(Position:vector2, Size:vector2, Text:string, Text Size:number)  
 ## Text Fields  
->EGP:createtextfield(Position:vector2, Size:vector2, Text:string, Text Size:number)  
-## Progress Bars
->EGP:createprogressbar(Position:vector2,Size:vector2)  
->EGP:updateprogress(Bar,Progress)
-## Cursor Support
->EGP:cursor()  
+EGP:createtextfield(Position:vector2, Size:vector2, Text:string, Text Size:number)  
+## Progress Bars  
+EGP:createprogressbar(Position:vector2,Size:vector2)  
+EGP:updateprogress(Bar,Progress)  
+## Cursor Support  
+EGP:cursor()  
 (Call it in a loop.)  
-## Theming
+## Theming  
 You can use its Theming capabilities to customize your uilib instance!  
 ## Specifying a Ttheme  
 Specify it in uilib.txt via #include "your/path/to/theme.txt"  

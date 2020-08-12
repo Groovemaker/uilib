@@ -3,7 +3,7 @@
 @outputs Pressed1
 @trigger
 
-interval(1)
+interval(11)
 
 if(first() || duped() || changed(EGP)){
     #include "ui/uilib"
@@ -17,7 +17,7 @@ if(first() || duped() || changed(EGP)){
 User = EGP["User",entity]
 Cursor = EGP:egpCursor(User)
 Use = User:keyUse()
-
+EGP:cursor()
 if(changed(Use) & Use){
     if(EGP:button(Cursor,Button1)){
         EGP:egpColor(Button1,BtnPressColor)

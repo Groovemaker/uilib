@@ -4,7 +4,7 @@
 @persist Funny:array Txt1 Prog Bar Go Interval Multi Iter I Finished Pitch Models:array
 @trigger
 
-interval(111)
+interval(11)
 
 if(first() || duped() || changed(EGP)){
     #include "ui/uilib"
@@ -14,7 +14,7 @@ if(first() || duped() || changed(EGP)){
     Finished = 0
     Interval = 111
     Multi = 3
-    Iter = 111
+    Iter = 55
     Pitch = 100
     EGP:egpClear()
     EGP:initUI()
@@ -29,20 +29,22 @@ if(first() || duped() || changed(EGP)){
     soundPitch(33,0)
 
 }
-
-User = EGP["User",entity]
+if(changed(EGP["User",entity]) && EGP["User",entity]:isValid() && EGP["User",entity]:isPlayer()){
+    User = EGP["User",entity]
+    
+}
 Cursor = EGP:egpCursor(User)
 Use = User:keyUse()
-
+EGP:cursor()
 if(changed(Use) & Use){
     if(EGP:button(Cursor,Button1)){
         EGP:egpColor(Button1,BtnPressColor)
         holoDeleteAll()
         I = 0
         Finished = 0
-        Interval = 111
+        Interval = 11
         Multi = 3
-        Iter = 111
+        Iter = 222
         Pitch = 100
         Prog = 0
         EGP:entity():soundPlay(33,0,"hl1/ambience/labdrone2.wav")

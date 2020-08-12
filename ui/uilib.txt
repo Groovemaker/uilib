@@ -167,8 +167,6 @@ function wirelink:cursor(){
     }
     Cursor2 = EGP:egpCursor(Userman)
     EGP:egpPos(111,Cursor2)
-    if(changed(ID)){
-        EGP:egpOrderAbove(111,ID) 
-    }
+    EGP:egpOrder(111,999)
 }
 

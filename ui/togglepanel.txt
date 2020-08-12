@@ -16,7 +16,7 @@ if(first() || duped() || changed(EGP)){
 User = EGP["User",entity]
 Cursor = EGP:egpCursor(User)
 Use = User:keyUse()
-
+EGP:cursor()
 if(changed(Use) & Use){
     if(EGP:button(Cursor,Button1)){
         EGP:egpColor(Button1,BtnPressColor)

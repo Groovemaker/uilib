@@ -4,7 +4,7 @@
 @persist Funny:array Txt1 Page
 @trigger
 
-interval(1)
+interval(11)
 
 
 
@@ -44,7 +44,7 @@ if(first() || duped() || changed(EGP)){
 User = EGP["User",entity]
 Cursor = EGP:egpCursor(User)
 Use = User:keyUse()
-
+EGP:cursor()
 if(Page == 1){
     if(changed(Use) & Use){
         if(EGP:button(Cursor,Button1)){

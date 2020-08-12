@@ -10,15 +10,15 @@ if(first() || duped() || changed(EGP)){
     PassA = Pass:explode("")
     EGP:egpClear()
     EGP:initUI()
-    Button1 = EGP:createbutton(vec2(100, 130),vec2(55),"1",44)
-    Button2 = EGP:createbutton(vec2(260, 130),vec2(55),"2",44)
-    Button3 = EGP:createbutton(vec2(420, 130),vec2(55),"3",44)
-    Button4 = EGP:createbutton(vec2(100, 275),vec2(55),"4",44)
-    Button5 = EGP:createbutton(vec2(260, 275),vec2(55),"5",44)
-    Button6 = EGP:createbutton(vec2(420, 275),vec2(55),"6",44)
-    Button7 = EGP:createbutton(vec2(100, 420),vec2(55),"7",44)
-    Button8 = EGP:createbutton(vec2(260, 420),vec2(55),"8",44)
-    Button9 = EGP:createbutton(vec2(420, 420),vec2(55),"9",44)
+    Button1 = EGP:createbutton(vec2(100, 130),vec2(115),"1",44)
+    Button2 = EGP:createbutton(vec2(260, 130),vec2(115),"2",44)
+    Button3 = EGP:createbutton(vec2(420, 130),vec2(115),"3",44)
+    Button4 = EGP:createbutton(vec2(100, 275),vec2(115),"4",44)
+    Button5 = EGP:createbutton(vec2(260, 275),vec2(115),"5",44)
+    Button6 = EGP:createbutton(vec2(420, 275),vec2(115),"6",44)
+    Button7 = EGP:createbutton(vec2(100, 420),vec2(115),"7",44)
+    Button8 = EGP:createbutton(vec2(260, 420),vec2(115),"8",44)
+    Button9 = EGP:createbutton(vec2(420, 420),vec2(115),"9",44)
     EGP:egpText(99,"GrooveOS Keypad",vec2(10,10))
     EGP:egpFont(99,"DermaDefault",20)
  
@@ -26,7 +26,7 @@ if(first() || duped() || changed(EGP)){
 User = EGP["User",entity]
 Cursor = EGP:egpCursor(User)
 Use = User:keyUse()
-
+EGP:cursor()
 if(changed(Use) & Use){
     if(EGP:button(Cursor,Button1)){
         EGP:egpColor(Button1,BtnPressColor)

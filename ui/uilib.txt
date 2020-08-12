@@ -4,7 +4,7 @@
 @trigger 
 
 #Place your Theme File here!
-#include "ui/themes/nightingale"
+#include "ui/themes/blurple_gmod"
 
 #Init
 LoopInterval = 100
@@ -60,6 +60,41 @@ function number wirelink:createbutton(Pos:vector2,Size:vector2,Txt:string,TxtSiz
     #EGP:egpColor(ID+2,BtnForeColor2) 
     return ID
 }
+function number wirelink:createiconbutton(Pos:vector2,Size:vector2,Txt:string,TxtSiz,Icon:string,IconSize:vector2){
+    ID+=2
+    if(ButtonStyle != "Rounded" && ButtonStyle != "Gradient"){
+        EGP:egpBox(ID,Pos,Size)  
+        EGP:egpBoxOutline(ID+2,Pos,Size * 1.5)
+        EGP:egpColor(ID+2,BtnForeColor2) 
+        EGP:egpBox(ID+122,Pos,(Size*IconSize))
+        EGP:egpMaterial(ID+122,Icon)
+        EGP:egpColor(ID+122,vec(255))
+    }else{
+        EGP:egpRoundedBox(ID,Pos,Size)
+        EGP:egpRadius(ID,11)
+        EGP:egpColor(ID,BtnForeColor) 
+    }
+    if(ButtonStyle == "Gradient"){
+        EGP:egpRoundedBox(ID+122,Pos,Size)
+        EGP:egpRadius(ID+122,11)
+        EGP:egpMaterial(ID+122,"gui/gradient_down")
+        EGP:egpColor(ID+122,Gradient)
+
+    }
+    if(ThemeStyle == "Modern"){
+        EGP:egpAlpha(ID,BtnAlpha)
+    }
+        EGP:egpBox(ID+133,Pos,(Size*IconSize))
+        EGP:egpMaterial(ID+133,Icon)
+        EGP:egpColor(ID+133,vec(255))
+    #EGP:egpText(ID+1,Txt,vec2(Pos[1],Pos[2]))
+    #EGP:egpAlign(ID+1,1,1)
+    #EGP:egpFont(ID+1,TxtFont,TxtSiz)
+    EGP:egpColor(ID,BtnForeColor)
+    #EGP:egpColor(ID+1,BtnTextColor)
+    #EGP:egpColor(ID+2,BtnForeColor2) 
+    return ID
+}
 function number wirelink:createbuttonEx(ID, Pos:vector2,Size:vector2,Txt:string,TxtSiz){
 
     if(ButtonStyle != "Rounded" && ButtonStyle != "Gradient"){
@@ -88,6 +123,40 @@ function number wirelink:createbuttonEx(ID, Pos:vector2,Size:vector2,Txt:string,
     EGP:egpFont(ID+1,TxtFont,TxtSiz)
     EGP:egpColor(ID,BtnForeColor)
     EGP:egpColor(ID+1,BtnTextColor)
+    #EGP:egpColor(ID+2,BtnForeColor2) 
+    return ID
+}
+function number wirelink:createiconbuttonex(ID,Pos:vector2,Size:vector2,Txt:string,TxtSiz,Icon:string,IconSize:vector2){
+    if(ButtonStyle != "Rounded" && ButtonStyle != "Gradient"){
+        EGP:egpBox(ID,Pos,Size)  
+        EGP:egpBoxOutline(ID+2,Pos,Size * 1.5)
+        EGP:egpColor(ID+2,BtnForeColor2) 
+        EGP:egpBox(ID+122,Pos,(Size*IconSize))
+        EGP:egpMaterial(ID+122,Icon)
+        EGP:egpColor(ID+122,vec(255))
+    }else{
+        EGP:egpRoundedBox(ID,Pos,Size)
+        EGP:egpRadius(ID,11)
+        EGP:egpColor(ID,BtnForeColor) 
+    }
+    if(ButtonStyle == "Gradient"){
+        EGP:egpRoundedBox(ID+122,Pos,Size)
+        EGP:egpRadius(ID+122,11)
+        EGP:egpMaterial(ID+122,"gui/gradient_down")
+        EGP:egpColor(ID+122,Gradient)
+
+    }
+    if(ThemeStyle == "Modern"){
+        EGP:egpAlpha(ID,BtnAlpha)
+    }
+        EGP:egpBox(ID+133,Pos,(Size*IconSize))
+        EGP:egpMaterial(ID+133,Icon)
+        EGP:egpColor(ID+133,vec(255))
+    #EGP:egpText(ID+1,Txt,vec2(Pos[1],Pos[2]))
+    #EGP:egpAlign(ID+1,1,1)
+    #EGP:egpFont(ID+1,TxtFont,TxtSiz)
+    EGP:egpColor(ID,BtnForeColor)
+    #EGP:egpColor(ID+1,BtnTextColor)
     #EGP:egpColor(ID+2,BtnForeColor2) 
     return ID
 }

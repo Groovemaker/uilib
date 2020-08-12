@@ -22,7 +22,8 @@ EGP:updateprogress(Bar,Progress)
 ## Cursor Support  
 EGP:cursor()  
 (Call it in a loop.)  
-  
+## Transforming
+EGP:uiSetPos(ID:number,Pos:vector2)  
   
 ## Theming  
 You can use its Theming capabilities to customize your uilib instance!  

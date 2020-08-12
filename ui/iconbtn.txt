@@ -24,9 +24,9 @@ EGP:egpRemove(Button1+122)
 EGP:egpRemove(Button1+133)
 EGP:egpRemove(Button1)
 Button1 = 1
-Button1 = EGP:createiconbuttonex(113,vec2(125, (sin(curtime()*177)*33)+255),vec2(111),"gui/gmod_logo",vec2(1))
-Button2 = EGP:createiconbuttonex(33,vec2(250, (sin(curtime()*176)*33)+255),vec2(111),"gui/progress_cog.png",vec2(0.5))
-Button3 = EGP:createiconbuttonex(55,vec2(380, (sin(curtime()*175)*33)+255),vec2(111),"gui/legs1",vec2(1.5))
+Button1 = EGP:createiconbuttonEx(113,vec2(125, (sin(curtime()*177)*33)+255),vec2(111),"gui/gmod_logo",vec2(1))
+Button2 = EGP:createiconbuttonEx(33,vec2(250, (sin(curtime()*176)*33)+255),vec2(111),"gui/progress_cog.png",vec2(0.5))
+Button3 = EGP:createiconbuttonEx(55,vec2(380, (sin(curtime()*175)*33)+255),vec2(111),"gui/legs1",vec2(1.5))
 if(changed(Use) & Use){
     if(EGP:button(Cursor,Button1)){
         EGP:egpColor(Button1,BtnPressColor)

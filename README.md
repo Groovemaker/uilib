@@ -4,6 +4,7 @@ Expression 2 UI Library for Gmod (Garry's Mod)
 # Readme:
 Save as "ui/" folder inside expression2.
   
+  
 # Usage:
 ## Initialization
 In the newest version youll have to call EGP:initUI() before everything, this ensures the latest customizations are loaded.  
@@ -17,6 +18,8 @@ EGP:updateprogress(Bar,Progress)
 ## Cursor Support  
 EGP:cursor()  
 (Call it in a loop.)  
+  
+  
 ## Theming  
 You can use its Theming capabilities to customize your uilib instance!  
 ## Specifying a Ttheme  
@@ -26,7 +29,6 @@ There are several themes already for you to toy around with, go ahead, just modi
 Keep in mind, that some textures cannot be rendered in EGP and will break the Theme doing so.  
 
 ## Some Theming Vars with examples
-
 ### General
 ThemeStyle = "Modern" (This is the Style of the theme, Possible values: "Modern". Omit variable for minimal theme.)  
 CursorEnable = 1 (Enables/Disables Cursor)  
@@ -46,10 +48,10 @@ BtnPressColor = BtnForeColor * 2 (Button Pressing Color)
 BtnWrongColor = vec(255,0,0) (Button Wrong Color for use with keypads, warnings, etc)  
 BtnRightColor = vec(0,255,0) (Button Right Color, ditto)  
 PressSnd = "buttons/button16.wav" (Button Press Sound, put "" for quiet)  
-
+  
+  
 ## Useful stuff
 Check out the examples too! (togglebtn, singlebtn and keypad)  
-  
 Theme support has been added as of this repo creation.  
   
 P.S: Shoutout to TSCM, i was banned ages ago but LINK, YOU ROCK!  

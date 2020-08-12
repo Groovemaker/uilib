@@ -19,11 +19,34 @@ Save as "ui/" folder inside expression2.
 (Call it in a loop.)  
 ## Theming
 You can use its Theming capabilities to customize your uilib instance!  
-## Specifying a theme  
+## Specifying a Ttheme  
 Specify it in uilib.txt via #include "your/path/to/theme.txt"  
-## Modding a theme
+## Modding a Theme
 There are several themes already for you to toy around with, go ahead, just modify some of them!  
 Keep in mind, that some textures cannot be rendered in EGP and will break the Theme doing so.  
+
+## Some Theming Vars with examples
+
+### General
+ThemeStyle = "Modern" (This is the Style of the theme, Possible values: "Modern". Omit variable for minimal theme.)  
+CursorEnable = 1 (Enables/Disables Cursor)  
+BackgroundEnable = 1 (Enables/Disables Background)  
+### Design Related
+CursorMat = "icon16/cursor.png" (Texture of the Cursor if enabled)  
+TxtFont = "DermaDefault" (Font for Text related elements)  
+ButtonStyle = "Gradient" (Button Style, Possible values: "Gradient", "Rounded")  
+Background = "gui/noicon.png" (Texture of the Background if enabled)  
+BtnForeColor = vec(111,11,255) (Theme Palette Color 1)  
+Gradient = vec(111,111,255) (Gradient Color if enabled)  
+BtnForeColor2 = vec(255) (Theme Palette Color 2)  
+BtnAlpha = 155 (Alpha of Elements)  
+BtnTextColor = vec(255) (Text Color of all Elements)  
+### Feedback Related
+BtnPressColor = BtnForeColor * 2 (Button Pressing Color)  
+BtnWrongColor = vec(255,0,0) (Button Wrong Color for use with keypads, warnings, etc)  
+BtnRightColor = vec(0,255,0) (Button Right Color, ditto)  
+PressSnd = "buttons/button16.wav" (Button Press Sound, put "" for quiet)  
+
 ## Useful stuff
 Check out the examples too! (togglebtn, singlebtn and keypad)  
   

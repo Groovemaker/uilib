@@ -92,7 +92,8 @@ function number wirelink:createiconbutton(Pos:vector2,Size:vector2,Txt:string,Tx
     #EGP:egpFont(ID+1,TxtFont,TxtSiz)
     EGP:egpColor(ID,BtnForeColor)
     #EGP:egpColor(ID+1,BtnTextColor)
-    #EGP:egpColor(ID+2,BtnForeColor2) 
+    #EGP:egpColor(ID+2,BtnForeColor2)
+    
     return ID
 }
 function number wirelink:createbuttonEx(ID, Pos:vector2,Size:vector2,Txt:string,TxtSiz){
@@ -126,7 +127,7 @@ function number wirelink:createbuttonEx(ID, Pos:vector2,Size:vector2,Txt:string,
     #EGP:egpColor(ID+2,BtnForeColor2) 
     return ID
 }
-function number wirelink:createiconbuttonex(ID,Pos:vector2,Size:vector2,Txt:string,TxtSiz,Icon:string,IconSize:vector2){
+function number wirelink:createiconbuttonex(ID, Pos:vector2,Size:vector2,Icon:string,IconSize:vector2){
     if(ButtonStyle != "Rounded" && ButtonStyle != "Gradient"){
         EGP:egpBox(ID,Pos,Size)  
         EGP:egpBoxOutline(ID+2,Pos,Size * 1.5)
@@ -157,7 +158,8 @@ function number wirelink:createiconbuttonex(ID,Pos:vector2,Size:vector2,Txt:stri
     #EGP:egpFont(ID+1,TxtFont,TxtSiz)
     EGP:egpColor(ID,BtnForeColor)
     #EGP:egpColor(ID+1,BtnTextColor)
-    #EGP:egpColor(ID+2,BtnForeColor2) 
+    #EGP:egpColor(ID+2,BtnForeColor2)
+    
     return ID
 }
 function number wirelink:button(Cursor:vector2,ID:number){

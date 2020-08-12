@@ -1,13 +1,15 @@
 @name 
 @inputs 
-@persist LoopInterval CursorMat:string CursorEnable Userman:entity User:entity BtnAlpha TxtFont:string ThemeStyle:string Gradient:vector OldSiz:vector2 BarSiz:vector2 OldPos:vector2 BackgroundEnable ButtonStyle:string Background:string Value Seq:array BtnWrongColor:vector BtnRightColor:vector PassA:array Pass:string Cursor:vector2 ID Button1 Button2 Button3 Button4 Button5 Button6 Button7 Button8 Button9 Pressed1 Use B BtnPressColor:vector BtnForeColor2:vector BtnForeColor:vector BtnTextColor:vector But EGP:wirelink
+@persist MouseEnabled LoopInterval CursorMat:string CursorEnable Userman:entity User:entity BtnAlpha TxtFont:string ThemeStyle:string Gradient:vector OldSiz:vector2 BarSiz:vector2 OldPos:vector2 BackgroundEnable ButtonStyle:string Background:string Value Seq:array BtnWrongColor:vector BtnRightColor:vector PassA:array Pass:string Cursor:vector2 ID Button1 Button2 Button3 Button4 Button5 Button6 Button7 Button8 Button9 Pressed1 Use B BtnPressColor:vector BtnForeColor2:vector BtnForeColor:vector BtnTextColor:vector But EGP:wirelink
 @trigger 
 
 #Place your Theme File here!
-#include "ui/themes/demonic"
+#include "ui/themes/blurple_gmod"
 
 #Init
+MouseEnabled = 0
 LoopInterval = 100
+
 if(TxtFont == ""){
     TxtFont = "DermaDefault"
 }
@@ -297,6 +299,11 @@ function wirelink:cursor(){
     foreach(V,Ply:entity = Plys){
         if(Ply:aimEntity() == EGP:entity()){
             Userman = Ply
+            if(MouseEnabled){
+                User = Userman
+                Cursor = EGP:egpCursor(User)
+                Use = User:keyAttack1()
+            }
         }
     }
     Cursor2 = EGP:egpCursor(Userman)

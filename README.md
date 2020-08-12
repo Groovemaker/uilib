@@ -57,7 +57,10 @@ BtnPressColor = BtnForeColor * 2 (Button Pressing Color)
 BtnWrongColor = vec(255,0,0) (Button Wrong Color for use with keypads, warnings, etc)  
 BtnRightColor = vec(0,255,0) (Button Right Color, ditto)  
 PressSnd = "buttons/button16.wav" (Button Press Sound, put "" for quiet)  
-  
+
+# MOUSE SUPPORT!!
+uilib now supports mouse!
+If you wish to use mouse to operate panels, please enable "MouseEnabled" to 1 in ui/uilib.txt!  
   
 ## Useful stuff
 Check out the examples too! (togglebtn, singlebtn and keypad, etc)  

@@ -4,7 +4,7 @@
 @trigger 
 
 #Place your Theme File here!
-#include "ui/themes/blurple_gmod"
+#include "ui/themes/demonic"
 
 #Init
 LoopInterval = 100
@@ -234,6 +234,59 @@ function wirelink:updateprogress(ID,Progress){
         EGP:egpColor(ID,BtnForeColor2)
         EGP:egpAlign(ID,2)
     }
+}
+function array wirelink:popup(Title:string,Size:vector2,Txt:string,TxtSiz){
+    ID+=15
+    if(ThemeStyle == "Modern"){
+        EGP:egpRoundedBox(ID,vec2(256),Size)
+        EGP:egpRadius(ID,11)
+        EGP:egpColor(ID,BtnForeColor *1.3)
+        EGP:egpBox(ID+2,vec2(256,256*1.05),vec2(Size[1]/1.1,Size[2]/1.25))
+        EGP:egpColor(ID+2,BtnForeColor2)
+        EGP:egpAlpha(ID+2,55)
+    }else{  
+        EGP:egpBoxOutline(ID,vec2(256),Size)
+        EGP:egpColor(ID,BtnForeColor2)
+        EGP:egpBox(ID+2,vec2(256,256*1.05),vec2(Size[1]/1.1,Size[2]/1.25))
+        EGP:egpColor(ID+2,BtnForeColor)
+    }
+
+    EGP:egpBox(ID+3,vec2(256,256)+vec2(0.44,-0.42)*Size,vec2(0.12)*Size[2])
+    EGP:egpMaterial(ID+3,"gui/close_32")
+    EGP:egpColor(ID+3,vec(255,66,66))
+    
+    EGP:egpText(ID+1,Txt,vec2(vec2(256)[1],vec2(256)[2]))
+    EGP:egpAlign(ID+1,1,1)
+    EGP:egpFont(ID+1,TxtFont,TxtSiz)
+    
+    EGP:egpText(ID+111,Title,vec2(256,256)+vec2(-0.45,-0.42)*Size)
+    EGP:egpAlign(ID+111,0,1)
+    EGP:egpFont(ID+111,TxtFont,TxtSiz)
+    if(ThemeStyle == "Modern"){
+        #EGP:egpAlpha(ID,BtnAlpha)
+    }
+    return array(ID+3,Size)
+}
+
+function number wirelink:closepopup(Popup:array){
+    PopID = Popup[1,number] - 3
+    EGP:egpAlpha(PopID+3,0)
+    EGP:egpAlpha(PopID+1,0)
+    EGP:egpAlpha(PopID+2,0)
+    EGP:egpAlpha(PopID,0)
+    EGP:egpAlpha(PopID+111,0)
+    Popup:clear()
+    return 1
+}
+function number wirelink:movepopup(Popup:array,Pos:vector2){
+    PopID = Popup[1,number] - 3
+    Psize = Popup[2,vector2]:y()
+    EGP:egpPos(PopID+3,Pos+vec2(0.64,-0.42)*Psize)
+    EGP:egpPos(PopID+1,Pos)
+    EGP:egpPos(PopID+2,vec2(Pos[1],Pos[2]*1.05))
+    EGP:egpPos(PopID,Pos)
+    EGP:egpPos(PopID+111,Pos+vec2(-0.65,-0.42)*Psize)
+    return 1
 }
 function wirelink:cursor(){
 

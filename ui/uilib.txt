@@ -127,7 +127,7 @@ function number wirelink:createbuttonEx(ID, Pos:vector2,Size:vector2,Txt:string,
     #EGP:egpColor(ID+2,BtnForeColor2) 
     return ID
 }
-function number wirelink:createiconbuttonex(ID, Pos:vector2,Size:vector2,Icon:string,IconSize:vector2){
+function number wirelink:createiconbuttonEx(ID, Pos:vector2,Size:vector2,Icon:string,IconSize:vector2){
     if(ButtonStyle != "Rounded" && ButtonStyle != "Gradient"){
         EGP:egpBox(ID,Pos,Size)  
         EGP:egpBoxOutline(ID+2,Pos,Size * 1.5)
@@ -135,6 +135,7 @@ function number wirelink:createiconbuttonex(ID, Pos:vector2,Size:vector2,Icon:st
         EGP:egpBox(ID+122,Pos,(Size*IconSize))
         EGP:egpMaterial(ID+122,Icon)
         EGP:egpColor(ID+122,vec(255))
+
     }else{
         EGP:egpRoundedBox(ID,Pos,Size)
         EGP:egpRadius(ID,11)
@@ -159,6 +160,7 @@ function number wirelink:createiconbuttonex(ID, Pos:vector2,Size:vector2,Icon:st
     EGP:egpColor(ID,BtnForeColor)
     #EGP:egpColor(ID+1,BtnTextColor)
     #EGP:egpColor(ID+2,BtnForeColor2)
+    EGP:egpOrder(ID+133,998)
     
     return ID
 }
@@ -169,6 +171,14 @@ function number wirelink:button(Cursor:vector2,ID:number){
     But = ID
     EGP:entity():soundPlay(1,0,PressSnd)
     return Pressed
+}
+function number wirelink:uiSetPos(ID:number,Pos:vector2){
+    EGP:egpPos(ID,Pos)
+    EGP:egpPos(ID+1,Pos)
+    EGP:egpPos(ID+2,Pos)
+    EGP:egpPos(ID+122,Pos)
+    EGP:egpPos(ID+133,Pos)
+    return 1
 }
 function number wirelink:createtextfield(Pos:vector2,Size:vector2,Txt:string,TxtSiz){
     ID+=2

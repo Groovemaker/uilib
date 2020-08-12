@@ -5,9 +5,11 @@
 @trigger 
 
 ThemeStyle = "Modern"
-
-TxtFont = "DermaDefault"
+CursorEnable = 1
 BackgroundEnable = 1
+
+CursorMat = "icon16/cursor.png"
+TxtFont = "DermaDefault"
 ButtonStyle = "Gradient"
 Background = "gui/noicon.png"
 BtnForeColor = vec(111,11,255)

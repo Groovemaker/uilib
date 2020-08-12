@@ -5,7 +5,10 @@
 @trigger 
 
 ThemeStyle = "Modern"
+CursorEnable = 1
+BackgroundEnable = 1
 
+CursorMat = "icon16/cursor.png"
 TxtFont = "Coolvetica"
 BackgroundEnable = 1
 ButtonStyle = "Gradient"

@@ -1,13 +1,18 @@
 @name 
 @inputs 
-@persist User:entity BtnAlpha TxtFont:string ThemeStyle:string Gradient:vector OldSiz:vector2 BarSiz:vector2 OldPos:vector2 BackgroundEnable ButtonStyle:string Background:string Value Seq:array BtnWrongColor:vector BtnRightColor:vector PassA:array Pass:string Cursor:vector2 ID Button1 Button2 Button3 Button4 Button5 Button6 Button7 Button8 Button9 Pressed1 Use B BtnPressColor:vector BtnForeColor2:vector BtnForeColor:vector BtnTextColor:vector But EGP:wirelink
+@persist LoopInterval CursorMat:string CursorEnable Userman:entity User:entity BtnAlpha TxtFont:string ThemeStyle:string Gradient:vector OldSiz:vector2 BarSiz:vector2 OldPos:vector2 BackgroundEnable ButtonStyle:string Background:string Value Seq:array BtnWrongColor:vector BtnRightColor:vector PassA:array Pass:string Cursor:vector2 ID Button1 Button2 Button3 Button4 Button5 Button6 Button7 Button8 Button9 Pressed1 Use B BtnPressColor:vector BtnForeColor2:vector BtnForeColor:vector BtnTextColor:vector But EGP:wirelink
 @trigger 
 
 #Place your Theme File here!
-
 #include "ui/themes/nightingale"
+
+#Init
+LoopInterval = 100
 if(TxtFont == ""){
     TxtFont = "DermaDefault"
+}
+if(CursorMat == ""){
+    CursorMat = "icon16/cursor.png"
 }
 #### Other stuff
 
@@ -16,6 +21,11 @@ function number wirelink:initUI(){
         EGP:egpBox(999,vec2(256,256),vec2(512,512))
         EGP:egpMaterial(999,Background)
         EGP:egpOrder(999,1) 
+    }
+    if(CursorEnable == 1){
+        EGP:egpBox(111,vec2(256,256),vec2(24,24))
+        EGP:egpMaterial(111,CursorMat)
+
     }
     return 1
 }
@@ -144,3 +154,21 @@ function wirelink:updateprogress(ID,Progress){
         EGP:egpAlign(ID,2)
     }
 }
+function wirelink:cursor(){
+
+    findInSphere(EGP:entity():pos(),133)
+    findExcludeClass("*")
+    findIncludeClass("player")
+    Plys = findToArray()
+    foreach(V,Ply:entity = Plys){
+        if(Ply:aimEntity() == EGP:entity()){
+            Userman = Ply
+        }
+    }
+    Cursor2 = EGP:egpCursor(Userman)
+    EGP:egpPos(111,Cursor2)
+    if(changed(ID)){
+        EGP:egpOrderAbove(111,ID) 
+    }
+}
+

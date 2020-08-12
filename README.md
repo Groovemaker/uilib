@@ -10,7 +10,7 @@ Save as "ui/" folder inside expression2.
 In the newest version youll have to call EGP:initUI() before everything, this ensures the latest customizations are loaded.  
 ## Buttons  
 EGP:createbutton(Position:vector2, Size:vector2, Text:string, Text Size:number)  
-EGP:createbuttonEx(ID:number, Position:vector2, Size:vector2, Text:string, Text Size:number)  
+EGP:createbuttonEx(ID:number, Position:vector2, Size:vector2, Text:string, TextSize:number)  
 ## Icon Buttons  
 EGP:createiconbutton(Position:vector2,Size:vector2,Texture:string,IconSize:vector2)  
 EGP:createiconbuttonEx(ID:number,Position:vector2,Size:vector2,Texture:string,IconSize:vector2)  
@@ -18,7 +18,11 @@ EGP:createiconbuttonEx(ID:number,Position:vector2,Size:vector2,Texture:string,Ic
 EGP:createtextfield(Position:vector2, Size:vector2, Text:string, Text Size:number)  
 ## Progress Bars  
 EGP:createprogressbar(Position:vector2,Size:vector2)  
-EGP:updateprogress(Bar,Progress)  
+EGP:updateprogress(Bar,Progress)
+## Popups  
+EGP:popup(Title:string, Size:vector2, Text:string, TextSize:number) - returns: Array:CloseBtnID,Size)  
+EGP:closepopup(Popup:array)
+EGP:movepopup(Popup:array,Pos:vector2)
 ## Cursor Support  
 EGP:cursor()  
 (Call it in a loop.)  

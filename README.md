@@ -13,7 +13,10 @@ Save as "ui/" folder inside expression2.
 >EGP:createtextfield(Position:vector2, Size:vector2, Text:string, Text Size:number)  
 ## Progress Bars
 >EGP:createprogressbar(Position:vector2,Size:vector2)  
->EGP:updateprogress(Bar,Progress)  
+>EGP:updateprogress(Bar,Progress)
+## Cursor Support
+>EGP:cursor()  
+(Call it in a loop.)  
 ## Theming
 You can use its Theming capabilities to customize your uilib instance!  
 ## Specifying a theme  
